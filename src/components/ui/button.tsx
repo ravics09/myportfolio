@@ -15,6 +15,9 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
+        // New 3D variant
+        threeD:
+          'border border-[#5ceac9] bg-background text-[#5ceac9] hover:shadow-[4px_4px_0_#5ceac9] hover:translate-y-[-2px] hover:translate-x-[-2px]',
       },
       size: {
         default: 'h-10 px-4 py-2',

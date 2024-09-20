@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import Navbar from '@/components/navbar/navbar';
 import Section from '@/components/ui/section';
 import Logo from '@/components/ui/logo';
+import Footer from '@/components/ui/footer';
+import { Button } from '@/components/ui/button';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +35,9 @@ const Home = () => {
           <main className="mt-16">
             <Section id="about" title="About">
               <p>This is the about section content.</p>
+              <Button variant="threeD" size="default">
+                Explore more
+              </Button>
             </Section>
             <Section id="experience" title="Experience">
               <p>This is the experience section content.</p>
@@ -43,6 +48,7 @@ const Home = () => {
             <Section id="contact" title="Contact">
               <p>This is the contact section content.</p>
             </Section>
+            <Footer />
           </main>
         </>
       )}

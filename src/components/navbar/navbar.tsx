@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Logo from '@/components/ui/logo';
+import { Button } from '@/components/ui/button';
 
 const navItemVariants = {
   hidden: { opacity: 0 },
@@ -31,7 +32,7 @@ const Navbar = () => {
         </div>
 
         {/* Right side: Nav Items with Animation */}
-        <div className="flex space-x-8">
+        <div className="flex items-center space-x-8">
           {navItems.map((item, index) => (
             <motion.div
               key={item.name}
@@ -47,6 +48,25 @@ const Navbar = () => {
               </Link>
             </motion.div>
           ))}
+
+          {/* Resume Button */}
+          <motion.div
+            custom={navItems.length} // Index for animation
+            initial="hidden"
+            animate="visible"
+            variants={navItemVariants}
+            className="transition duration-300"
+          >
+            <a
+              href="https://drive.google.com/file/d/your-pdf-id/view" // Replace with your PDF link
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="threeD" size="sm">
+                Resume
+              </Button>
+            </a>
+          </motion.div>
         </div>
       </nav>
     </header>
