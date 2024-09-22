@@ -24,7 +24,7 @@ const Logo = ({ animate = false, size = 'w-16 h-16' }: LogoProps) => (
     <motion.path
       d="M50 5L95 25L95 75L50 95L5 75L5 25Z"
       stroke="#5ceac9"
-      strokeWidth="3"
+      strokeWidth="5"
       fill="none"
       initial={animate ? { strokeDasharray: 400, strokeDashoffset: 400 } : {}}
       animate={animate ? { strokeDashoffset: 0 } : {}}
