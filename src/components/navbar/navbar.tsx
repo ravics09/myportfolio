@@ -20,7 +20,9 @@ const Navbar = () => {
     { name: '01. About', href: '#about' },
     { name: '02. Experience', href: '#experience' },
     { name: '03. Work', href: '#work' },
-    { name: '04. Contact', href: '#contact' },
+    { name: '04. Achievements', href: '#achievements' },
+    { name: '05. Social', href: '#social' },
+    { name: '06. Contact', href: '#contact' },
   ];
 
   const sectionIds = navItems.map((item) => item.href.slice(1)); // Extract section IDs from hrefs
