@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full fixed top-0 left-0 bg-[#091930] shadow-md z-50">
-      <nav className="container mx-auto h-[70px] px-5 flex justify-between items-center">
+      <nav className="w-full h-[70px] px-10 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" aria-label="Home">
             <Logo size="w-12 h-12" animate={false} />
