@@ -19,9 +19,9 @@ const Navbar = () => {
   const navItems = [
     { name: '01. About', href: '#about' },
     { name: '02. Experience', href: '#experience' },
-    { name: '03. Work', href: '#work' },
+    { name: '03. Projects', href: '#projects' },
     { name: '04. Achievements', href: '#achievements' },
-    { name: '05. Social', href: '#social' },
+    { name: '05. Blog', href: '#blog' },
     { name: '06. Contact', href: '#contact' },
   ];
 
@@ -29,14 +29,13 @@ const Navbar = () => {
   const activeSection = useActiveSection(sectionIds); // Use the custom hook to track the active section
 
   return (
-    <header className="w-full fixed top-0 left-0 bg-[#091930] shadow-md z-50">
-      <nav className="w-full h-[70px] px-10 flex justify-between items-center">
+    <header className="flex mx-auto shadow-md z-50 fixed top-0 left-0 right-0 bg-[#091930]">
+      <nav className="w-full h-[70px] flex justify-between items-center px-5">
         <div className="flex items-center">
           <Link href="/" aria-label="Home">
             <Logo size="w-12 h-12" animate={false} />
           </Link>
         </div>
-
         {/* Right side: Nav Items with Animation */}
         <div className="flex items-center space-x-8">
           {navItems.map((item, index) => (

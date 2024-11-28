@@ -9,7 +9,7 @@ const HeroSection = () => {
       <h4 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-400">
         I transform concepts into innovative digital experiences.
       </h4>
-      <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
+      <p className="text-lg md:text-xl text-gray-500 max-w-2xl">
         I’m a Senior Software Engineer specializing in crafting exceptional digital experiences, with expertise in both
         frontend and backend development. Currently, I’m focused on building business-standard web applications using
         Next.js, ReactJS, and NodeJS at <span className="text-[#5ceac9]">Globant</span>

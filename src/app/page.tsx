@@ -9,7 +9,8 @@ import Footer from '@/components/ui/footer';
 import AboutSection from '@/components/about';
 import HeroSection from '@/components/hero';
 import ExperienceSection from '@/components/experience';
-import WorkSection from '@/components/work';
+import ProjectsSection from '@/components/projects';
+import AchievementSection from '@/components/achievements';
 import ContactSection from '@/components/contact';
 
 const Home = () => {
@@ -39,7 +40,8 @@ const Home = () => {
           <HeroSection />
           <AboutSection />
           <ExperienceSection />
-          <WorkSection />
+          <ProjectsSection />
+          <AchievementSection />
           <ContactSection />
           <Footer />
         </main>
