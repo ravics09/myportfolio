@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Section from '@/components/ui/section';
+import TypingAnimation from '@/components/ui/typing-animation';
 
 const HeroSection = () => {
   return (
@@ -9,11 +10,13 @@ const HeroSection = () => {
       <h4 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-400">
         I transform concepts into innovative digital experiences.
       </h4>
-      <p className="text-lg md:text-xl text-gray-500 max-w-2xl">
-        I’m a Senior Software Engineer specializing in crafting exceptional digital experiences, with expertise in both
+      <TypingAnimation
+        duration={50}
+        className="text-lg md:text-xl text-gray-500 max-w-2xl text-left"
+        text="I’m a Senior Software Engineer specializing in crafting exceptional digital experiences, with expertise in both
         frontend and backend development. Currently, I’m focused on building business-standard web applications using
-        Next.js, ReactJS, and NodeJS at <span className="text-[#5ceac9]">Globant</span>
-      </p>
+        Next.js, ReactJS, and NodeJS at Globant"
+      />
       <a href="#contact">
         <Button variant="threeD" size="default">
           Get in Touch

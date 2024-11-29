@@ -21,8 +21,8 @@ const Navbar = () => {
     { name: '02. Experience', href: '#experience' },
     { name: '03. Projects', href: '#projects' },
     { name: '04. Achievements', href: '#achievements' },
-    { name: '05. Blog', href: '#blog' },
-    { name: '06. Contact', href: '#contact' },
+    { name: '05. Contact', href: '#contact' },
+    { name: '06. Blog', href: '#blog' },
   ];
 
   const sectionIds = navItems.map((item) => item.href.slice(1)); // Extract section IDs from hrefs
@@ -47,7 +47,11 @@ const Navbar = () => {
               variants={navItemVariants}
               className={`relative transition duration-300 `} // Add bottom border to the active nav item
             >
-              <Link href={item.href}>
+              <Link
+                href={item.href === '#blog' ? 'https://javascriptcentric.medium.com/' : item.href}
+                target={item.href === '#blog' ? '_blank' : undefined}
+                rel={item.href === '#blog' ? 'noopener noreferrer' : undefined}
+              >
                 <span className="text-[#5ceac9]">{item.name.split(' ')[0]}</span>
                 <span className="hover:text-[#5ceac9]">{item.name.slice(item.name.indexOf(' '))}</span>
               </Link>
