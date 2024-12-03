@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Logo from '@/components/ui/logo';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useActiveSection } from '@/hooks/useActiveSection';
 
@@ -16,6 +17,8 @@ const navItemVariants = {
 };
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const navItems = [
     { name: '01. About', href: '#about' },
     { name: '02. Experience', href: '#experience' },
@@ -28,16 +31,23 @@ const Navbar = () => {
   const sectionIds = navItems.map((item) => item.href.slice(1)); // Extract section IDs from hrefs
   const activeSection = useActiveSection(sectionIds); // Use the custom hook to track the active section
 
+  // Function to close the mobile menu when a nav item is clicked
+  const handleNavItemClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="flex mx-auto shadow-md z-50 fixed top-0 left-0 right-0 bg-[#091930]">
       <nav className="w-full h-[70px] flex justify-between items-center px-5">
+        {/* Logo Section */}
         <div className="flex items-center">
           <Link href="/" aria-label="Home">
             <Logo size="w-12 h-12" animate={false} />
           </Link>
         </div>
-        {/* Right side: Nav Items with Animation */}
-        <div className="flex items-center space-x-8">
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item, index) => (
             <motion.div
               key={item.name}
@@ -45,7 +55,7 @@ const Navbar = () => {
               initial="hidden"
               animate="visible"
               variants={navItemVariants}
-              className={`relative transition duration-300 `} // Add bottom border to the active nav item
+              className={`relative transition duration-300`}
             >
               <Link
                 href={item.href === '#blog' ? 'https://javascriptcentric.medium.com/' : item.href}
@@ -68,7 +78,7 @@ const Navbar = () => {
 
           {/* Resume Button */}
           <motion.div
-            custom={navItems.length} // Index for animation
+            custom={navItems.length}
             initial="hidden"
             animate="visible"
             variants={navItemVariants}
@@ -85,7 +95,63 @@ const Navbar = () => {
             </a>
           </motion.div>
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+          >
+            <svg
+              className="h-6 w-6 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={
+                  isMenuOpen
+                    ? 'M6 18L18 6M6 6l12 12' // Close icon
+                    : 'M4 6h16M4 12h16m-7 6h7' // Hamburger icon
+                }
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-[#091930] px-5 py-4 space-y-2">
+          {navItems.map((item, index) => (
+            <Link
+              key={item.name}
+              href={item.href === '#blog' ? 'https://javascriptcentric.medium.com/' : item.href}
+              target={item.href === '#blog' ? '_blank' : undefined}
+              rel={item.href === '#blog' ? 'noopener noreferrer' : undefined}
+              className="block text-[#5ceac9] hover:text-white"
+            >
+              <span onClick={handleNavItemClick}>{item.name}</span>
+            </Link>
+          ))}
+
+          {/* Resume Button */}
+          <a
+            href="https://drive.google.com/file/d/your-pdf-id/view" // Replace with your PDF link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-center"
+          >
+            <Button variant="threeD" size="sm" className="w-full">
+              Resume
+            </Button>
+          </a>
+        </div>
+      )}
     </header>
   );
 };
