@@ -38,9 +38,9 @@ const Navbar = () => {
 
   return (
     <header className="flex mx-auto shadow-md z-50 fixed top-0 left-0 right-0 bg-[#091930]">
-      <nav className="w-full h-[70px] flex justify-between items-center px-5">
+      <nav className="w-full h-[70px] flex justify-between items-center px-5 md:px-5">
         {/* Logo Section */}
-        <div className="flex items-center">
+        <div className="flex items-center pr-5">
           <Link href="/" aria-label="Home">
             <Logo size="w-12 h-12" animate={false} />
           </Link>

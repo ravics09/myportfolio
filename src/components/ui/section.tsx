@@ -21,7 +21,7 @@ const Section: React.FC<SectionProps> = ({ id, title, children, className }) => 
     <section id={id} className={`flex min-h-screen mx-auto pt-24 container ${className}`}>
       <div className="max-w-4xl flex flex-col space-y-4 px-5 w-full ">
         {title && (
-          <h2 className="text-4xl mb-2">
+          <h2 className="text-xl md:text-3xl mb-2">
             {title}
             <span className="block h-[1px] bg-[#5ceac9] w-full mt-2" />
           </h2>

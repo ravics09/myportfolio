@@ -54,15 +54,15 @@ const ContactSection = () => {
   };
 
   return (
-    <Section id="contact" title="Connect with Me" className="justify-center items-center">
-      <div className="flex flex-col items-center space-y-6 mb-5">
-        <form onSubmit={handleSubmit} className="max-w-4xl text-lg md:text-xl text-gray-500 space-y-4 w-full">
+    <Section id="contact" title="Connect with Me" className="justify-center items-center p-4 sm:p-6 md:p-10">
+      <div className="flex flex-col space-y-6 mb-8">
+        <form onSubmit={handleSubmit} className="mx-auto max-w-4xl text-lg md:text-xl text-gray-500 space-y-6 w-full">
           <p>
             I&apos;m actively seeking new opportunities and would love to connect! Feel free to leave me a message, and
             I’ll get back to you promptly.
           </p>
 
-          <div className="grid w-full max-w-md items-center gap-1.5">
+          <div className="grid w-full max-w-md items-start gap-1.5">
             <Label htmlFor="name">Name</Label>
             <Input
               type="text"
@@ -73,7 +73,7 @@ const ContactSection = () => {
               required
             />
           </div>
-          <div className="grid w-full max-w-md items-center gap-1.5">
+          <div className="grid w-full max-w-md items-start gap-1.5">
             <Label htmlFor="email">Email</Label>
             <Input
               type="email"
@@ -85,7 +85,7 @@ const ContactSection = () => {
             />
           </div>
 
-          <div className="grid w-full max-w-md items-center gap-1.5">
+          <div className="grid w-full max-w-md items-start gap-1.5">
             <Label htmlFor="email">Message</Label>
             <Textarea
               name="message"
@@ -97,30 +97,34 @@ const ContactSection = () => {
             />
           </div>
 
-          <Button type="submit" variant="threeD" className="max-w-md w-full" disabled={formData.email.length === 0}>
+          <Button
+            type="submit"
+            variant="threeD"
+            className="grid max-w-md w-full items-start"
+            disabled={formData.email.length === 0}
+          >
             Send Message
           </Button>
           {status && <p className="mt-4 text-sm">{status}</p>}
         </form>
       </div>
 
-      <div className="flex-col items-center space-y-3 mt-5">
-        <div className="max-w-4xl flex flex-col space-y-4">
-          <h2 className="text-2xl mb-2">
-            Using Social Link
-            <span className="block h-[1px] bg-[#5ceac9] w-full mt-2" />
-          </h2>
-        </div>
+      <div className="flex flex-col space-y-3 mt-10">
+        <h2 className="text-xl md:text-3xl mb-2">
+          Using Social Link
+          <span className="block h-[1px] bg-[#5ceac9] w-full mt-2" />
+        </h2>
 
-        <div className="max-w-4xl flex space-x-4 w-full">
+        {/* Social Links */}
+        <div className="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4 w-full">
           <a href="mailto:ravisharmacs09@gmail.com" target="_blank" rel="noopener noreferrer">
-            <Button variant="threeD" size="default" className="flex items-center space-x-2">
+            <Button variant="threeD" size="default" className="max-w-xs flex items-center space-x-2">
               <FaEnvelope className="w-5 h-5" />
               <span>Email Me</span>
             </Button>
           </a>
           <a href="https://www.linkedin.com/in/ravics09/" target="_blank" rel="noopener noreferrer">
-            <Button variant="threeD" size="default" className="flex items-center space-x-2">
+            <Button variant="threeD" size="default" className="max-w-xs flex items-center space-x-2">
               <FaLinkedin className="w-5 h-5" />
               <span>Connect on LinkedIn</span>
             </Button>
@@ -130,7 +134,7 @@ const ContactSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="threeD" size="default" className="flex items-center space-x-2">
+            <Button variant="threeD" size="default" className="max-w-xs flex items-center space-x-2">
               <FaWhatsapp className="w-5 h-5" />
               <span>Message on WhatsApp</span>
             </Button>
