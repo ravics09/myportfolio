@@ -13,7 +13,7 @@ const achievements = [
   {
     title: 'GCP Cloud Digital Leader',
     description: 'Earned the Google Cloud Digital Leader certification, showcasing expertise in cloud solutions.',
-    image: '/images/associatecloudengineer.png',
+    image: '/images/clouddigitalleader.png',
     githubLink: 'https://www.credly.com/badges/fec206ee-8e8a-47c7-b9f2-bb48374ea803/public_url',
   },
   {
