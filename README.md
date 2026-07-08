@@ -30,11 +30,11 @@ A modern, animated **single-page developer portfolio** built with **Next.js 14 (
 
 ## Live Demo
 
-> **A live deployment URL is not defined anywhere in the repository.**
+> **No live deployment URL is committed in the repository.**
 
-The project is Next.js and Vercel-ready (`.vercel` is present in `.gitignore`), but no production URL, `vercel.json`, or deploy metadata is committed.
+The site is deployed on **Netlify** via Netlify's Git integration (configured in the Netlify dashboard, not in the repo — there is no `netlify.toml` or deploy metadata committed).
 
-- **Live Site:** _TBD — add your production URL here_
+- **Live Site:** _TBD — add your Netlify production URL here_
 - **Blog (external, linked from the navbar):** https://javascriptcentric.medium.com/
 
 ---
@@ -92,7 +92,7 @@ Only features that are actually implemented in the source are listed.
 | **Authentication** | _None_ |
 | **AI** | _None_ |
 | **Cloud** | _None configured in repo_ |
-| **Deployment** | Vercel-ready (no committed deploy config) |
+| **Deployment** | Netlify (configured via dashboard Git integration; no deploy config committed) |
 | **DevOps / Tooling** | ESLint, Prettier, Husky, lint-staged, commitlint, Commitizen |
 | **Testing** | _None_ |
 | **Package Manager** | npm (only `package-lock.json` is committed) |
@@ -264,7 +264,7 @@ Defined in `package.json`:
 - **Format** — `npm run format` / `format-check` via Prettier (integrated with lint-staged).
 - **Commit hooks** — `pre-commit` runs `lint-staged` (ESLint fix + Prettier on staged files); `commit-msg` runs commitlint to enforce **Conventional Commits**.
 - **Test** — _No test suite is configured._
-- **Deployment** — Not automated; the project is Vercel-ready (see Deployment).
+- **Deployment** — Hosted on Netlify; deploys are triggered automatically by Netlify's Git integration on pushes to the production branch (see Deployment).
 
 ---
 
@@ -338,10 +338,11 @@ Not present (candidates for future work): route-level code splitting/lazy loadin
 
 ## Deployment
 
-- **Recommended platform:** **Vercel** (the project is created with `create-next-app` and `.vercel` is git-ignored, indicating prior Vercel usage). Connect the GitHub repo to Vercel, set `EMAIL_USER` and `EMAIL_PASS` as environment variables, and it deploys with zero extra config.
+- **Hosting platform:** **Netlify.** The site is connected to the GitHub repo through Netlify's Git integration (set up in the Netlify dashboard). Auto-deploys are triggered on pushes/merges to the production branch — this connection lives in Netlify, not in the repo (no `netlify.toml` is committed).
+- **Required setup on Netlify:** build command `next build`, and the **Next.js runtime** (`@netlify/plugin-nextjs`) so App Router routes and the `/api/send-mail` function work. Set `EMAIL_USER` and `EMAIL_PASS` under **Site settings → Environment variables**, otherwise the contact form returns 500 in production.
 - **Manual/self-hosted:** run `npm run build` then `npm run start` behind a Node.js host or reverse proxy.
 - **Docker:** ❌ No Dockerfile committed (would need to be added).
-- **CI/CD:** ❌ No `.github/workflows` or other pipeline configuration committed. Husky handles local pre-commit/commit-msg checks only.
+- **CI/CD:** ❌ No `.github/workflows` or other pipeline configuration committed. Netlify's own Git integration handles builds; Husky handles local pre-commit/commit-msg checks only.
 
 ---
 
