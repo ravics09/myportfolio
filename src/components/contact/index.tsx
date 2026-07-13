@@ -55,8 +55,8 @@ const ContactSection = () => {
 
   return (
     <Section id="contact" title="Connect with Me" className="justify-center items-center p-4 sm:p-6 md:p-10">
-      <div className="flex flex-col space-y-6 mb-8">
-        <form onSubmit={handleSubmit} className="mx-auto max-w-4xl text-lg md:text-xl text-gray-500 space-y-6 w-full">
+      <div className="flex flex-col space-y-6 pb-5">
+        <form onSubmit={handleSubmit} className="mx-auto text-lg md:text-xl text-gray-500 space-y-6 w-full">
           <p>
             I&apos;m actively seeking new opportunities and would love to connect! Feel free to leave me a message, and
             I’ll get back to you promptly.

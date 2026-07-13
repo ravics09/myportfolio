@@ -23,7 +23,7 @@ const Navbar = () => {
     { name: '01. About', href: '#about' },
     { name: '02. Experience', href: '#experience' },
     { name: '03. Projects', href: '#projects' },
-    { name: '04. Achievements', href: '#achievements' },
+    { name: '04. Certifications', href: '#achievements' },
     { name: '05. Contact', href: '#contact' },
     { name: '06. Blog', href: '#blog' },
   ];
@@ -141,7 +141,7 @@ const Navbar = () => {
 
           {/* Resume Button */}
           <a
-            href="https://drive.google.com/file/d/your-pdf-id/view" // Replace with your PDF link
+            href="https://drive.google.com/file/d/1Nu1g3QxYgNfg5bLpqx07nct9yl90kDRg/view?usp=sharing" // Replace with your PDF link
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center"

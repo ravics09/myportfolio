@@ -34,33 +34,16 @@ const achievements = [
 
 const AchievementSection = () => {
   return (
-    <Section id="achievements" title="Achievements" className="justify-center items-center">
+    <Section id="achievements" title="Certifications" className="justify-center items-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-x-8">
         {achievements.map((achievement, index) => (
           <CardContainer key={index} className="inter-var">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-[500px] rounded-xl p-6 border flex flex-col justify-between">
-              <div>
+            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-[600px] rounded-xl p-6 border flex flex-col justify-between">
+              <div className="flex justify-between">
                 <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
                   {achievement.title}
                 </CardItem>
-                <CardItem
-                  as="p"
-                  translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-                >
-                  {achievement.description}
-                </CardItem>
-              </div>
-              <CardItem translateZ="100" className="w-full mt-4">
-                <Image
-                  src={achievement.image}
-                  height="1000"
-                  width="1000"
-                  className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                  alt="thumbnail"
-                />
-              </CardItem>
-              <div className="flex justify-start items-center mt-4">
+
                 <CardItem
                   translateZ={20}
                   as="a"
@@ -72,6 +55,18 @@ const AchievementSection = () => {
                   Link
                 </CardItem>
               </div>
+              <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
+                {achievement.description}
+              </CardItem>
+              <CardItem translateZ="100" className="w-full mt-4">
+                <Image
+                  src={achievement.image}
+                  height="1000"
+                  width="1000"
+                  className="h-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  alt="thumbnail"
+                />
+              </CardItem>
             </CardBody>
           </CardContainer>
         ))}
