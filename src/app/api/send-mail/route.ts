@@ -8,7 +8,6 @@ interface RequestBody {
 }
 // In Next.js 13+, if we're using the app directory (instead of the pages directory), the routing mechanism is slightly different, and you need to export each HTTP method as a named export in the API route file.
 export async function POST(req: Request) {
-  console.log('email', process.env.EMAIL_USER);
   try {
     const { name, email, message }: RequestBody = await req.json();
 
