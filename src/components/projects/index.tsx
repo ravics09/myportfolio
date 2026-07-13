@@ -14,7 +14,7 @@ const projects = [
     title: 'Rama AI',
     description:
       'Production-grade AI Engineering Assistant Platform. It helps engineers understand, navigate, and modify application code by combining large language models with deep, structural knowledge of a codebase.',
-    image: '/images/devassist.png',
+    image: '/images/ramaai.png',
     link: '',
   },
 ];
