@@ -169,7 +169,7 @@ const data = [
 
 const ExperienceSection = () => {
   return (
-    <Section id="experience" title="Where I’ve Worked" className="justify-center items-center mb-5">
+    <Section id="experience" title="Experience" className="justify-center items-center mb-5">
       <div className="w-full">
         <Timeline data={data} />
       </div>
